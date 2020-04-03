@@ -1,0 +1,27 @@
+server:
+  port: 9001
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sonia
+    username: root
+    password: 123456
+
+mybatis:
+  type-aliases-package: com.sonia.model
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com.sonia: debug
+
+# 自定义rsa 的publicKey 和 privateKey 两个变量， 注意变量名是自定义的
+# 来自之前在 common module里的测试类的生成。
+rsa:
+  key:
+    publicKeyFile: C:\Users\wengj\Documents\study\jwt\RAS_KEY\sonia_key_rsa.pub
+    privateKeyFile: C:\Users\wengj\Documents\study\jwt\RAS_KEY\sonia_key_rsa
+
+
