@@ -1,0 +1,20 @@
+server:
+  port: 9001
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sonia?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+  main:
+    allow-bean-definition-overriding: true #允许我们自己覆盖 spring 放入到IOC容器的对象, 因为在 OAuth2的包里面有好多配置放入了IOC 容器中，我们这时再配置相同ID的代码进去会报错，于是这个标志很重要
+
+mybatis:
+  type-aliases-package: com.sonia.model
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com.sonia: debug
