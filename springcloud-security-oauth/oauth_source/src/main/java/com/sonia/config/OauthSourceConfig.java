@@ -52,6 +52,7 @@ public class OauthSourceConfig extends ResourceServerConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 //指定不同请求方式访问资源所需要的权限，一般查询是read，其余是write。
+                //这时候所有资源的访问请求都被 OAuth2的jar控制了，不需要别的额外配置了
                 .antMatchers(HttpMethod.GET, "/**").access("#oauth2.hasScope('read')")
                 .antMatchers(HttpMethod.POST, "/**").access("#oauth2.hasScope('write')")
                 .antMatchers(HttpMethod.PATCH, "/**").access("#oauth2.hasScope('write')")

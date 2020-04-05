@@ -12,6 +12,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <!--这里就建了 B端的两个 module ,A端通过浏览器和postman 直接访问即可
+        关于A端访问 可以详见 印象笔记里的 spring security-db-boot 文章13
         后期创建时，它会自动生成下面两句话
     -->
     <modules>
