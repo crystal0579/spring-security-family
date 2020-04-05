@@ -1,7 +1,5 @@
 package com.sonia.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -9,11 +7,12 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 
 import javax.annotation.Resource;
-import javax.sql.DataSource;
 
+/**
+ * 为了方便测试，4种模式都允许访问，即数据库oauth_client_details.authorized_grant_types指定
+ */
 @Configuration
 @EnableResourceServer //开启oauth的资源服务器，查看源码，发现它并不适合写在application的启动类上,因为需要继承和实现某个类
 //@EnableResourceServer 类似于 spring-security 的 @EnableWebSecurity

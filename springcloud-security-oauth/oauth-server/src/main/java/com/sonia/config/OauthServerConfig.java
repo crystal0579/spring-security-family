@@ -22,6 +22,7 @@ import javax.sql.DataSource;
 
 /**
  * 它里面内置了7个对象，其实是建议放在 application的启动类里生成，这里为了清晰点，放在了OAuth2的配置类里生成
+ * 开启了授权码模式认证，并且为了方便测试，4种模式都允许访问，即数据库oauth_client_details.authorized_grant_types指定
  */
 @Configuration
 @EnableAuthorizationServer
