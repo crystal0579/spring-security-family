@@ -13,14 +13,14 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
-@EnableWebSecurity
+@EnableWebSecurity//依然
 public class SecurityDbConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserService userService;// interface UserService extends UserDetailsService
 
     @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
+    private BCryptPasswordEncoder passwordEncoder;//这也是 OAuth2里的 oauth_client_details.client_secret的密码加密模式，两者是统一的
 
     /**
      * 认证用户的来源
@@ -50,7 +50,7 @@ public class SecurityDbConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * 将 OAuth2 融入到 spring security 中
-     * 授权码模式
+     * 授权码模式的勾搭，需要由他牵线(详见 {@link OauthServerConfig}  类)
      * AuthenticationManager对象在OAuth2认证服务中要使用，提前放入 IOC 容器中， 所以@Bean
      */
     @Override

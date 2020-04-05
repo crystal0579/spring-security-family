@@ -31,7 +31,7 @@ public class SysRole implements GrantedAuthority {
         return roleDesc;
     }
 
-public void setRoleDesc(String roleDesc) {
+    public void setRoleDesc(String roleDesc) {
         this.roleDesc = roleDesc;
     }
 

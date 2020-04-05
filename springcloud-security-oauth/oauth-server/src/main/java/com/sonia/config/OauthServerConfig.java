@@ -20,6 +20,9 @@ import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 
 import javax.sql.DataSource;
 
+/**
+ * 它里面内置了7个对象，其实是建议放在 application的启动类里生成，这里为了清晰点，放在了OAuth2的配置类里生成
+ */
 @Configuration
 @EnableAuthorizationServer
 public class OauthServerConfig extends AuthorizationServerConfigurerAdapter {

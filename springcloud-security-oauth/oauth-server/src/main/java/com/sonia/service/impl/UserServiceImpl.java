@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService {//UserService extends UserDetailsService
 
     @Autowired
     private UserMapper userMapper;//本来此处会有编译爆红，因为dao层没有 annotation，但是application上已经加了 MapperScan的路径了

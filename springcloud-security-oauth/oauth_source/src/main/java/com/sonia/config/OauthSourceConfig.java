@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 //@EnableResourceServer 类似于 spring-security 的 @EnableWebSecurity
 public class OauthSourceConfig extends ResourceServerConfigurerAdapter {
 
-    @Resource //@Autowired是根据类型查找，实现类多
+    @Resource //@Autowired是根据类型查找，实现类较多，感觉Resource更安全合适//这个的bean的生成详见启动类
     private TokenStore jdbcTokenStore;
 
     /**

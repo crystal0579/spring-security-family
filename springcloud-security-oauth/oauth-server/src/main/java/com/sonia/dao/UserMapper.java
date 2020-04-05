@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
-public interface UserMapper {
+public interface UserMapper {//mybatis-spring-boot-starter.jar允许它可以没有什么extends
 
     @Select("select * from sys_user where username = #{ username }")
     @Results({
