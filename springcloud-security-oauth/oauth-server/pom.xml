@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- 一个既有spring security又有OAuth2的功能的模块 -->
     <artifactId>oauth-server</artifactId>
 
     <dependencies>

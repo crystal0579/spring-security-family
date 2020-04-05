@@ -29,7 +29,7 @@ public class OauthSourceConfig extends ResourceServerConfigurerAdapter {
      */
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-        resources.resourceId("product_api") //这个可以任意命名 指定该工程的 resourceId
+        resources.resourceId("product_api") //这个可以任意命名 指定该工程的 resourceId,也可以将 resourceId 写入配置文件中，@value引入
                 .tokenStore(jdbcTokenStore);//指定token store 为 jdbc
     }
 
