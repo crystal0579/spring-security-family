@@ -107,7 +107,9 @@ public class OauthServerConfig extends AuthorizationServerConfigurerAdapter {
      */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        endpoints.approvalStore(approvalStore())
+        endpoints
+                .userDetailsService(userService) //只有加了这句话，才能使用 refresh_token
+                .approvalStore(approvalStore())
                 .authenticationManager(authenticationManager)
                 .authorizationCodeServices(authorizationCodeServices())
                 .tokenStore(tokenStore());
