@@ -2,6 +2,7 @@ package com.sonia.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
@@ -16,6 +17,7 @@ import javax.annotation.Resource;
 @Configuration
 @EnableResourceServer //开启oauth的资源服务器，查看源码，发现它并不适合写在application的启动类上,因为需要继承和实现某个类
 //@EnableResourceServer 类似于 spring-security 的 @EnableWebSecurity
+@EnableGlobalMethodSecurity(securedEnabled = true)//spring security 的动态控制权限，即之前在 springboot-security-jsp 工程里启动类上的标注，配合在 controller 上写 @Secured("ROLE_PRODUCT")
 public class OauthSourceConfig extends ResourceServerConfigurerAdapter {
 
     @Resource //@Autowired是根据类型查找，实现类较多，感觉Resource更安全合适//这个的bean的生成详见启动类
